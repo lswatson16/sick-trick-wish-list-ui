@@ -1,10 +1,14 @@
 import React from "react";
 import './TrickCard.css'
 
-const TrickCard = () => {
+const TrickCard = (props) => {
+  const { stance, name, obstacle, tutorial } = props
   return (
-    <div>
-      <h1>Trick Card</h1>
+    <div className='card-container'>
+      <h2>{ name }</h2>
+      <p>{ obstacle }</p>
+      <p>{ stance }</p>
+      <p>{ tutorial }</p>
     </div>
   ) 
 }

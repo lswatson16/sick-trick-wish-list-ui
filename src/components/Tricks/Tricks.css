@@ -1,1 +1,4 @@
-
+.skate-tricks-container {
+  display: flex;
+  justify-content: space-around;
+}

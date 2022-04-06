@@ -21,13 +21,9 @@ const Tricks = (props) => {
   })
   
   return(
-    <section>
-      <h1>Tricks</h1>
-      <div className='skate-tricks-container'>
-        { skateTricks }
-      </div>
-
-    </section>
+    <div className='skate-tricks-container'>
+      { skateTricks }
+    </div>
   )
   
 }
