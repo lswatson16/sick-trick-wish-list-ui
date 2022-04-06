@@ -5,7 +5,8 @@ const apiCalls = {
         return response.json()
       })
       .catch(error => {
-        console.log(error)
+        console.log('err in apiCalls', error)
+        return error
       } )
   }
 }

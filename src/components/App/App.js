@@ -16,6 +16,10 @@ class App extends Component {
         console.log(data)
         this.setState( { tricks: data })
       })
+      .catch(error => {
+        console.log('err in App', error)
+        return error
+      })
   }
 
   render() {
