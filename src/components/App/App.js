@@ -1,7 +1,15 @@
 import { Component } from 'react';
 import './App.css';
+import apiCalls from '../../apiCalls';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      tricks: []
+    }
+  }
+
   render() {
     return (
       <div className="App">
