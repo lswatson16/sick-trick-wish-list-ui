@@ -15,7 +15,7 @@ class App extends Component {
   componentDidMount() {
     apiCalls.fetchTricks()
       .then(data => {
-        console.log(data)
+        // console.log(data)
         this.setState( { tricks: data })
       })
       .catch(error => {

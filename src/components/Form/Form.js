@@ -13,14 +13,27 @@ class Form extends Component {
     }
   }
 
+  handleChange = (event) => {
+    // console.log(event.target)
+    this.setState({ [event.target.title]: event.target.value });
+  }
+
+  // handleSubmit(event) {
+  //   event.preventDefault();
+  // }
+
   render() {
     return(
-      <form className='tricks-form'>
+      <form 
+        className='tricks-form'
+        onSubmit={this.handleSubmit}
+      >
         <input
           type='text'
           placeholder='Name'
           title='name'
           value={this.state.name}
+          onChange={(event) => this.handleChange(event)}
         />
         {/* <input
           type='text'
@@ -55,8 +68,9 @@ class Form extends Component {
           placeholder='Tutorial'
           title='tutorial'
           value={this.state.tutorial}
+          onChange={(event) => this.handleChange(event)}
         />
-        <button>SEND IT</button>
+        <input type='submit' value='SEND IT' />
       </form>
     )
   }
