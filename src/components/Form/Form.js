@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './Form.css'
 
 class Form extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       stance: '',
       name: '',
@@ -18,9 +18,12 @@ class Form extends Component {
     this.setState({ [event.target.title]: event.target.value });
   }
 
-  // handleSubmit(event) {
-  //   event.preventDefault();
-  // }
+  handleSubmit(event) {
+    event.preventDefault();
+    const newTrick = { id: Date.now(), ...this.state }
+    console.log(newTrick)
+    // this.props.addTrick(newTrick);
+  }
 
   render() {
     return(
@@ -35,12 +38,7 @@ class Form extends Component {
           value={this.state.name}
           onChange={(event) => this.handleChange(event)}
         />
-        {/* <input
-          type='text'
-          placeholder='Stance'
-          title='stance'
-          value={this.state.stance}
-        /> */}
+  
         <label>Choose a stance
           <select name='stances'>
             <option value='regular'>Regular</option>
@@ -57,12 +55,7 @@ class Form extends Component {
             <option value='pool'>Pool</option>
           </select>
         </label>
-        {/* <input
-          type='text'
-          placeholder='Obstacle'
-          title='obstacle'
-          value={this.state.obstacle}
-        /> */}
+        
         <input
           type='text'
           placeholder='Tutorial'
@@ -70,6 +63,7 @@ class Form extends Component {
           value={this.state.tutorial}
           onChange={(event) => this.handleChange(event)}
         />
+        
         <input type='submit' value='SEND IT' />
       </form>
     )

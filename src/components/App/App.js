@@ -12,6 +12,10 @@ class App extends Component {
     }
   }
 
+  addTrick = (newTrick) => {
+    this.setState({ tricks: [...this.state.tricks, newTrick] })
+  }
+
   componentDidMount() {
     apiCalls.fetchTricks()
       .then(data => {
@@ -28,7 +32,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
-        <Form />
+        <Form addTrick={this.addTrick} />
         <Tricks tricks={this.state.tricks} />
       </div>
     );
